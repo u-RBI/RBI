@@ -119,3 +119,30 @@ html {
 {
   background-color: aliceblue;
 }
+
+/* Fix drop-shadow rendering issues by converting to box-shadow */
+div.brutal-card {
+  filter: none !important;
+}
+
+/* Use box-shadow instead of filter:drop-shadow for buttons */
+a.brutal-btn {
+  filter: none !important;
+  box-shadow: 5px 5px 0px rgba(0,0,0,1) !important;
+  transition: all 150ms ease !important;
+}
+
+a.brutal-btn:hover {
+  box-shadow: 3px 3px 0px rgba(0,0,0,1) !important;
+}
+
+/* Use box-shadow instead of filter:drop-shadow for pills */
+span.brutal-pill {
+  filter: none !important;
+  box-shadow: 3px 3px 0px rgba(0,0,0,1) !important;
+  transition: all 150ms ease !important;
+}
+
+span.brutal-pill:hover {
+  box-shadow: 5px 5px 0px rgba(0,0,0,1) !important;
+}
