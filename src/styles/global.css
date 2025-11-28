@@ -120,29 +120,33 @@ html {
   background-color: aliceblue;
 }
 
-/* Fix drop-shadow rendering issues by converting to box-shadow */
+/* Override drop-shadow with box-shadow for clean rendering */
 div.brutal-card {
   filter: none !important;
+  box-shadow: 7px 7px 0 rgba(0, 0, 0, 1) !important;
+  transition: box-shadow 150ms ease !important;
 }
 
-/* Use box-shadow instead of filter:drop-shadow for buttons */
+div.brutal-card:hover {
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 1) !important;
+}
+
 a.brutal-btn {
   filter: none !important;
-  box-shadow: 5px 5px 0px rgba(0,0,0,1) !important;
-  transition: all 150ms ease !important;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 1) !important;
+  transition: box-shadow 150ms ease !important;
 }
 
 a.brutal-btn:hover {
-  box-shadow: 3px 3px 0px rgba(0,0,0,1) !important;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 1) !important;
 }
 
-/* Use box-shadow instead of filter:drop-shadow for pills */
 span.brutal-pill {
   filter: none !important;
-  box-shadow: 3px 3px 0px rgba(0,0,0,1) !important;
-  transition: all 150ms ease !important;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 1) !important;
+  transition: box-shadow 150ms ease !important;
 }
 
 span.brutal-pill:hover {
-  box-shadow: 5px 5px 0px rgba(0,0,0,1) !important;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 1) !important;
 }
