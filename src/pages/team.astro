@@ -5,9 +5,12 @@ import { Card, Button } from '@eliancodes/brutal-ui';
 
 const teamMembers = [
   {
-    name: 'RMG',
+    name: 'rose makes games',
     role: 'Cofounder',
-    image: '/icon/rose.png'
+    image: '/icon/rose.png',
+    twitter: 'https://twitter.com/rosemakesgames',
+    discord: 'http://discord.com/users/221632445009625089',
+    itch: 'https://rosemakesgames.itch.io/'
   },
   {
     name: 'JCB',
@@ -31,7 +34,7 @@ const teamMembers = [
       <div class='grid md:grid-cols-2 gap-8 mb-12'>
         {teamMembers.map((member) => (
           <TeamMemberCard
-            name={member.name}
+            name={member.name} twitter={member.twitter}
             role={member.role}
             image={member.image}
           />
