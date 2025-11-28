@@ -124,11 +124,12 @@ html {
 div.brutal-card {
   filter: none !important;
   box-shadow: 7px 7px 0 rgba(0, 0, 0, 1) !important;
-  transition: box-shadow 150ms ease !important;
+  transition: box-shadow 150ms ease, border 150ms ease !important;
 }
 
 div.brutal-card:hover {
   box-shadow: 5px 5px 0 rgba(0, 0, 0, 1) !important;
+  border-width: 4px !important;
 }
 
 a.brutal-btn {
