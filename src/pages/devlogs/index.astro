@@ -12,9 +12,8 @@ const posts = await getCollection('blog').then((collection) =>
   title='Blog'
   description='RBI Dev Logs | On this page you can find a collection of blogposts'
   pageTitle='RBI Dev Logs'
-  bgColor='bg-green'
 >
   <main class='flex-1 p-6'>
-    <BlogList posts={posts} />
+    <BlogList posts={posts} showTitle={true} />
   </main>
 </Layout>
