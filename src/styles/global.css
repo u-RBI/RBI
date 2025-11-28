@@ -1,6 +1,6 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities;
 
 .card-shadow {
   box-shadow: 7px 7px 0 rgb(0 0 0 / 1);
@@ -118,4 +118,38 @@ html {
 ::selection
 {
   background-color: aliceblue;
+}
+
+/* Override Brutal UI Card to use box-shadow instead of filter:drop-shadow */
+div.brutal-card {
+  position: relative;
+  filter: none !important;
+}
+
+div.brutal-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: transparent;
+  pointer-events: none;
+  z-index: -1;
+  transition: box-shadow 150ms ease;
+  /* Hard-edged shadow offset by 7px - avoids subpixel gaps */
+  box-shadow: 7px 7px 0 rgb(0 0 0 / 1);
+}
+
+div.brutal-card:hover::before {
+  box-shadow: 5px 5px 0 rgb(0 0 0 / 1);
+}
+
+/* Override button shadow */
+a.brutal-btn {
+  filter: none !important;
+  box-shadow: 5px 5px 0 rgb(0 0 0 / 1);
+  transition: box-shadow 150ms ease;
+}
+
+a.brutal-btn:hover {
+  box-shadow: 3px 3px 0 rgb(0 0 0 / 1);
 }
