@@ -1,0 +1,117 @@
+---
+const navigationItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Dev Logs', url: '/devlogs/' },
+  { name: 'Team', url: '/team/' },
+];
+
+const socialIcons = [
+  {
+    name: 'Twitter',
+    url: 'https://www.twitter.com/rbistudios',
+    icon: 'i-uil-twitter',
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/company/rbistudios',
+    icon: 'i-uil-linkedin',
+  }
+];
+---
+
+{/* Mobile hamburger button */}
+<button
+  id='mobile-menu-button'
+  class='md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center border-2 border-black bg-white p-1 rounded hover:bg-gray-100 transition-colors'
+  aria-label='Toggle menu'
+  aria-expanded='false'
+>
+  <span class='w-5 h-0.5 bg-black transition-all'></span>
+  <span class='w-5 h-0.5 bg-black transition-all'></span>
+  <span class='w-5 h-0.5 bg-black transition-all'></span>
+</button>
+
+{/* Mobile menu overlay */}
+<nav id='mobile-menu' class='md:hidden hidden fixed inset-0 bg-white z-50 p-6'>
+  <div class='flex justify-between items-center mb-8'>
+    <p class='righteous text-3xl'>Menu</p>
+    <button
+      id='mobile-menu-close'
+      class='flex flex-col gap-1.5 w-8 h-8 justify-center items-center border-2 border-black bg-white p-1 rounded'
+      aria-label='Close menu'
+    >
+      <span class='w-5 h-0.5 bg-black transform rotate-45 translate-y-1'></span>
+      <span class='w-5 h-0.5 bg-black transform -rotate-45 -translate-y-1'></span>
+    </button>
+  </div>
+  <h2 class='hidden'>Mobile Navigation</h2>
+  <ul class='flex flex-col gap-6 poppins text-2xl'>
+    {navigationItems.map((item) => (
+      <li>
+        <a
+          href={item.url}
+          class='block py-3 border-b-2 border-black hover:text-green transition-colors'
+          title={`Go to ${item.name}`}
+        >
+          {item.name}
+        </a>
+      </li>
+    ))}
+    <li class='mt-4 flex gap-4'>
+      {socialIcons.map((item) => (
+        <a
+          href={item.url}
+          target='_blank'
+          class='flex items-center gap-2 hover:text-green transition-colors'
+          title={`Visit ${item.name}`}
+        >
+          <div class:list={[item.icon, 'w-6 h-6']} />
+        </a>
+      ))}
+    </li>
+  </ul>
+</nav>
+
+<script>
+  function initMobileMenu() {
+    const menuButton = document.getElementById('mobile-menu-button') as HTMLButtonElement;
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeButton = document.getElementById('mobile-menu-close') as HTMLButtonElement;
+
+    if (!menuButton || !mobileMenu || !closeButton) return;
+
+    // Remove any existing listeners by cloning
+    const newMenuButton = menuButton.cloneNode(true) as HTMLButtonElement;
+    const newCloseButton = closeButton.cloneNode(true) as HTMLButtonElement;
+    menuButton.parentNode?.replaceChild(newMenuButton, menuButton);
+    closeButton.parentNode?.replaceChild(newCloseButton, closeButton);
+
+    // Add event listeners
+    newMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      newMenuButton.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    });
+
+    newCloseButton.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      newMenuButton.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        newMenuButton.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  // Initialize on load
+  initMobileMenu();
+
+  // Re-initialize after Astro page transitions
+  document.addEventListener('astro:page-load', initMobileMenu);
+</script>

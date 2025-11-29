@@ -1,7 +1,6 @@
 ---
 import Layout from '@layouts/Default.astro';
 import RecentBlogPosts from '@components/generic/RecentBlogPosts.astro';
-import MobileSocials from '@components/home/MobileSocials.astro';
 import { Pill } from '@eliancodes/brutal-ui';
 import { Button } from '@eliancodes/brutal-ui';
 import { Card } from '@eliancodes/brutal-ui';
@@ -29,24 +28,54 @@ const builtWith = [
   description='RBI Studios is an aspiring Game Studio in Chicago.'
 >
   <main class='p-6'>
-    <MobileSocials />
-    <section id='about' class='grid md:grid-cols-8 gap-8 mt-4'>
+    <section id='about' class='mt-4'>
       <h2 class='hidden'>About RBI</h2>
-      <div class='col-span-4'>
-        <Card color='#4ade80'>
-          <div class='flex flex-col justify-between items-start gap-4'>
-            <p class='mt-4 outfit text-2xl md:text-5xl lg:text-7xl'>
+      
+      {/* Mobile: 2x2 grid, Desktop: 4 columns */}
+      <div class='grid grid-cols-2 md:grid-cols-4 gap-4 mb-4'>
+        <!-- <Card color='#4ade80'>
+          <div class='flex flex-col items-center justify-center h-full p-4 text-center'>
+            <p class='outfit text-lg md:text-2xl font-bold'>Card 1</p>
+          </div>
+        </Card>
+        
+        <Card color='#60a5fa'>
+          <div class='flex flex-col items-center justify-center h-full p-4 text-center'>
+            <p class='outfit text-lg md:text-2xl font-bold'>Card 2</p>
+          </div>
+        </Card>
+        
+        <Card color='#c084fc'>
+          <div class='flex flex-col items-center justify-center h-full p-4 text-center'>
+            <p class='outfit text-lg md:text-2xl font-bold'>Card 3</p>
+          </div>
+        </Card>
+        
+        <Card color='#f472b6'>
+          <div class='flex flex-col items-center justify-center h-full p-4 text-center'>
+            <p class='outfit text-lg md:text-2xl font-bold'>Card 4</p>
+          </div>
+        </Card>
+      </div> -->
+      
+      {/* 2x1 card spanning full width on mobile, 4 columns on desktop */}
+      <div class='col-span-2 md:col-span-4'>
+        <Card color='#002657'>
+          <div class='flex flex-col justify-between items-start gap-4 p-6'>
+            <p class='mt-4 outfit text-2xl md:text-5xl lg:text-7xl text-white'>
               RBI Studios
             </p>
-            <p class='mt-2 outfit text-xl md:text-3xl lg:text-5xl'>
+            <p class='mt-2 mb-4 outfit text-xl md:text-3xl lg:text-5xl text-white'>
               A Creative Game Studio.
             </p>
-            <Button target={'_self'} href='/devlogs/'>
-              Check out our Dev Logs! &rarr;
-            </Button>
-            <Button target={'_self'} href='/team/'>
-              Contact Us &rarr;
-            </Button>
+            <div class='flex gap-4 flex-wrap'>
+              <Button target={'_self'} href='/devlogs/'>
+                Check out our Dev Logs! &rarr;
+              </Button>
+              <Button target={'_self'} href='/team/'>
+                Contact Us &rarr;
+              </Button>
+            </div>
           </div>
         </Card>
       </div>
