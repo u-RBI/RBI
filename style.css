@@ -205,8 +205,8 @@ img {
 .btn::before {
   content: '';
   display: inline-block;
-  width: 54px;
-  height: 62px;
+  width: 27px;
+  height: 31px;
   background: url('/public/dashund1.png') center / contain no-repeat;
   flex-shrink: 0;
   image-rendering: pixelated;
