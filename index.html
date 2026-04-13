@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RBI Studios</title>
+  <meta name="description" content="A new and creative game studio located in Chicago." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="/public/favicon.svg" type="image/svg+xml" />
+  <script src="/header.js" defer></script>
+</head>
+<body>
+
+  <site-header active="blog"></site-header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+    <div class="container">
+
+      <!-- Hero -->
+      <section class="hero">
+        <p class="hero-eyebrow">Game Studio &middot; Chicago</p>
+        <h1 class="hero-title">We create games that we&nbsp;want to&nbsp;play ourselves</h1>
+        <p class="hero-description">
+          RBI is a new and creative game studio.
+          We can't wait to share our first project with you.
+        </p>
+        <div class="hero-cta">
+          <a href="/blog/" class="btn btn-primary">Read dev logs</a>
+          <a href="/tags/" class="btn btn-outline">Browse tags</a>
+        </div>
+      </section>
+
+      <!-- Latest dev logs -->
+      <section class="posts-section">
+        <div class="posts-header">
+          <span class="section-label">Latest dev logs</span>
+          <a href="/blog/" class="btn btn-outline btn-sm">View all</a>
+        </div>
+
+        <ul class="post-list" aria-label="Dev log posts">
+          <li class="post-item">
+            <a href="/blog/first-dev-log.html" class="post-link">
+              <div>
+                <div class="post-title">The First Dev Log</div>
+                <div class="post-excerpt">Kicking off my development log with Godot.</div>
+              </div>
+              <time class="post-date" datetime="2026-01-22">Jan 22, 2026</time>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Discord -->
+      <section class="discord-section">
+        <img src="/public/brand-discord.svg" alt="" class="discord-icon" aria-hidden="true" />
+        <div>
+          <p class="discord-heading">Join our Discord</p>
+          <p class="discord-sub">Hang out, follow progress, and chat with the team.</p>
+        </div>
+        <a href="https://discord.gg/Bp8gcjpS" class="btn btn-outline discord-btn" target="_blank" rel="noopener noreferrer">Join server</a>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <span class="footer-logo">RBI Studios</span>
+          <p class="footer-copy">&copy; 2026 MIT License</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/blog/" class="footer-link">Dev Logs</a>
+          <a href="/tags/" class="footer-link">Tags</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
