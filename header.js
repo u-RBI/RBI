@@ -1,4 +1,4 @@
-// <site-header active="blog|tags|none">
+// <site-header active="strikeking|blog|tags|none">
 // Native Web Component — no shadow DOM so global CSS applies directly.
 class SiteHeader extends HTMLElement {
   connectedCallback() {
@@ -12,6 +12,7 @@ class SiteHeader extends HTMLElement {
               <img src="/public/logo.png" alt="RBI Studios" />
             </a>
             <nav class="site-nav" aria-label="Primary navigation">
+              <a href="/strikeking/" class="nav-link${active === 'strikeking' ? ' active' : ''}">strike king</a>
               <a href="/blog/" class="nav-link${active === 'blog' ? ' active' : ''}">dev logs</a>
               <a href="/tags/" class="nav-link${active === 'tags' ? ' active' : ''}">tags</a>
             </nav>
